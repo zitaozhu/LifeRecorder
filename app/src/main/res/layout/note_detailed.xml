@@ -4,27 +4,35 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/titleView"
+        android:id="@+id/titlePromptView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Title Here" />
 
     <EditText
+        android:id="@+id/titleView"
         android:layout_width="match_parent"
         android:layout_height="30dp" />
 
     <TextView
-        android:id="@+id/contentViewv"
+        android:id="@+id/contentPromptView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Content Here" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="397dp">
         <EditText
+            android:id="@+id/contentView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </ScrollView>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save" />
 
 </LinearLayout>
