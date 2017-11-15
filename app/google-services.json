@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1073283309838",
+    "firebase_url": "https://liferecorder-15d37.firebaseio.com",
+    "project_id": "liferecorder-15d37",
+    "storage_bucket": "liferecorder-15d37.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073283309838:android:9754932f31ce8358",
+        "android_client_info": {
+          "package_name": "com.example.zhuxiaodong.liferecorder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073283309838-89a2httvrc82kgtctucgibh1rj5fs2qb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.zhuxiaodong.liferecorder",
+            "certificate_hash": "5d50530775e7aa3bff42a889148dbabb226db427"
+          }
+        },
+        {
+          "client_id": "1073283309838-t88putfrqhmh54u0fqoas54kh5nh3d1e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3k9yKfRtvGI9NpgMXV_vmNsm-pYR2WHo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073283309838-t88putfrqhmh54u0fqoas54kh5nh3d1e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
