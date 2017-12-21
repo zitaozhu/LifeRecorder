@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_save_note"
+        app:showAsAction="never"
+        android:title="@string/save_note" />
+    <item
+        android:id="@+id/action_picture"
+        app:showAsAction="never"
+        android:title="@string/add_see_pictures"
+        />
+    <item
+        android:id="@+id/action_set_location"
+        app:showAsAction="never"
+        android:title="@string/add_set_location" />
+
+    <item
+        android:id="@+id/action_comment_location"
+        app:showAsAction="never"
+        android:title="@string/add_comment_this_location" />
+</menu>

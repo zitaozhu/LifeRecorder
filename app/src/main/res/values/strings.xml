@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">LifeRecorder</string>
     <string name="action_settings">Settings</string>
+    <string name="save_note">save note</string>
+    <string name="add_see_pictures">add/see pictures</string>
+    <string name="add_set_location">add/set location</string>
+    <string name="add_comment_this_location">add/comment this location</string>
+    <string name="auth_failed">auth_failed</string>
+    <string name="location_detailed_prompt">Here are some of the comments from our users:</string>
+    <string name="take_some_notes">TakeSomeNotes</string>
+    <string name="welcome">Welcome</string>
+    <string name="not_logged_in">not loged in, nothing to show</string>
+    <string name="content">content</string>
+    <string name="location">location</string>
+    <string name="title">title</string>
+    <string name="take_some_note">TakeSomeNotes</string>
 </resources>
