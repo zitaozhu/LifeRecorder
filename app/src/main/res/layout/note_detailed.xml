@@ -1,38 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
-    <TextView
-        android:id="@+id/titlePromptView"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Title Here" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <EditText
-        android:id="@+id/titleView"
+        android:id="@+id/note_detialed_title_view"
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        tools:text="title" />
 
     <TextView
-        android:id="@+id/contentPromptView"
+        android:id="@+id/note_detailed_location_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Content Here" />
+        tools:text="location" />
 
-    <ScrollView
+
+
+
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="397dp">
-        <EditText
-            android:id="@+id/contentView"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:id="@+id/detailed_note_scroll"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </ScrollView>
+            android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/saveButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save" />
+            <EditText
+                android:id="@+id/note_detialed_content_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="18sp"
+                tools:text="content" />
+        </ScrollView>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_note_detailed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            app:layout_anchor="@id/detailed_note_scroll"
+            app:layout_anchorGravity="bottom|center|end" />
+    </android.support.design.widget.CoordinatorLayout>
+
+    <TextView
+        android:id="@+id/note_detailed_key_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
 
 </LinearLayout>
