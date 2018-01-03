@@ -29,8 +29,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
+/**
+ * Mainactivity is the index page for user to choose items from a list of notes they own.
+ */
 public class MainActivity extends AppCompatActivity {
-    //private static final String TAG = "Message";
     private final int SIGN_IN_REQUEST_CODE = 123;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-        if(getSupportActionBar() != null) {
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(R.string.take_some_note);
         }
 
@@ -53,28 +55,19 @@ public class MainActivity extends AppCompatActivity {
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-            // Start sign in/sign up activity
+            // Start sign in/sign up activity if user is not signed in
             startActivityForResult(
-                    AuthUI.getInstance()
-                            .createSignInIntentBuilder()
-                            .build(),
-                    SIGN_IN_REQUEST_CODE
-            );
-
+                    AuthUI.getInstance().createSignInIntentBuilder().build(), SIGN_IN_REQUEST_CODE);
         } else {
-            // User is already signed in. Therefore, display
-            // a welcome Toast
+            // User is already signed in. Therefore, display a welcome Toast
             Toast.makeText(this,
                     getString(R.string.welcome) + FirebaseAuth.getInstance().getCurrentUser()
                             .getDisplayName(), Toast.LENGTH_LONG).show();
-
-            //NoteAsyncTask asyncTask = new NoteAsyncTask(this, noteList);
             try {
                 loadNotes();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            //asyncTask.execute(listOfNotes);
         }
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_main);
@@ -91,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * loads the notes form the firebase
+     *
      * @throws InterruptedException
      */
     private void loadNotes() throws InterruptedException {
@@ -108,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 if (dataSnapshot.getChildrenCount() == 0) {
                     //if theres no notes, load the auto generated one
                     HashMap<NoteItem, String> map = new HashMap<NoteItem, String>();
-                    map.put(new NoteItem("Welcome wrtite your first note", "", ""), "");
+                    map.put(new NoteItem(getString(R.string.auto_gen_note), "", ""), "");
                     setNoteValue(map);
                 }
                 HashMap<NoteItem, String> keyMap = new HashMap<>();
@@ -132,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * run async task to lead to recycler view
-     * @param notes  notes going to be loaded
+     * @param notes notes going to be loaded
      */
     private void setNoteValue(HashMap<NoteItem, String> notes) {
         for (NoteItem note : notes.keySet()) {
@@ -151,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * for the selection of toolbar
+     * activity evoked by selecting items from toolbar
      * @param item item in the toolbar thats selected
      * @return true
      */
@@ -183,7 +177,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //sign in sign out
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode,
                                     Intent data) {

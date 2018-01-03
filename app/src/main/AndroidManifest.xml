@@ -20,6 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".NoteDetailed" />
+        <activity android:name=".LocationDetailed" />
+        <activity android:name=".PictureDetailed" />
+        <activity android:name=".SettingLocation" />
+        <activity android:name=".CommentingLocation" />
     </application>
 
 </manifest>
